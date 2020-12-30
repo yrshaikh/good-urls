@@ -21,7 +21,9 @@ jobs:
         pr-body-regex: "(.*)"
     - name: Commit Linter
       uses: wagoid/commitlint-github-action@v2.0.3
-
+      with:
+        firstParent: true
+        failOnWarnings: true
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
