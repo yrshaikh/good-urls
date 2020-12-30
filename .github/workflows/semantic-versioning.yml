@@ -1,4 +1,4 @@
-name: Semantic Versioning Checks
+name: Semantic Versioning
 
 on: [pull_request]
 
@@ -8,15 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Coventional PR Title Check
-      uses: aslafy-z/conventional-pr-title-action@v2.2.2
+    
+    - name: Conventional Commit Checker
+      uses: agenthunt/conventional-commit-checker-action@v1.0.0
       with:
-        success-state: ✅  PR title follows conventional commit specifications
-        failure-state: ❌  PR title doesn't follow conventional commit specifications
-        context-name: conventional-pr-title
-        preset: conventional-changelog-angular@latest
+        pr-title-regex::  "^(feat|fix|ci|chore|docs|test|style|refactor)((.+?))?: .{1,}$"
+        pr-body-regex: "(.*)"
+
+
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
