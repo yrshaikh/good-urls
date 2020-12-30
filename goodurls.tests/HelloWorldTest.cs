@@ -15,12 +15,5 @@ namespace goodurls.tests
             var message = HelloWorld.GetMessage();
             Assert.AreEqual("Hello World", message);
         }
-
-        [Test]
-        public void TestFailingTest()
-        {
-            var message = HelloWorld.GetMessage();
-            Assert.AreEqual("Fail", message);
-        }
     }
 }
