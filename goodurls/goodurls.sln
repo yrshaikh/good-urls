@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "goodurls.lib", "goodurls.lib\goodurls.lib.csproj", "{4DBFEF2A-0F55-4AC4-AE82-0F29E09F90D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "goodurls.tests", "goodurls.tests\goodurls.tests.csproj", "{7641A787-1771-47DF-BAA6-2B1793E1BBE3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DBFEF2A-0F55-4AC4-AE82-0F29E09F90D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DBFEF2A-0F55-4AC4-AE82-0F29E09F90D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DBFEF2A-0F55-4AC4-AE82-0F29E09F90D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DBFEF2A-0F55-4AC4-AE82-0F29E09F90D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7641A787-1771-47DF-BAA6-2B1793E1BBE3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7641A787-1771-47DF-BAA6-2B1793E1BBE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7641A787-1771-47DF-BAA6-2B1793E1BBE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7641A787-1771-47DF-BAA6-2B1793E1BBE3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
