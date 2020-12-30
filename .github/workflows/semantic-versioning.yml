@@ -1,6 +1,6 @@
 name: Semantic Versioning
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
@@ -10,8 +10,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Validate PR Title
-      uses: CashStory/commitizen-action-pr@1.0.1
+    - name: Coventional PR Title Check
+      uses: aslafy-z/conventional-pr-title-action@v2.2.2
+      with:
+        success-state: ✅  PR title follows conventional commit specifications
+        failure-state: ❌  PR title doesn't follow conventional commit specifications
+        context-name: conventional-pr-title
+        preset: conventional-changelog-angular@latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
