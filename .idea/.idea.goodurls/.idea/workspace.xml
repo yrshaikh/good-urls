@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bf978f66-73ca-46e8-8d38-ca20c3bcea75" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.goodurls/.idea/sonarIssues.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.goodurls/.idea/sonarIssues.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.goodurls/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.goodurls/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -32,6 +32,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RunManager">
     <configuration name="goodurls.tests" type="DotNetProject" factoryName=".NET Project">
@@ -63,6 +64,7 @@
       <updated>1609253886185</updated>
       <workItem from="1609253890369" duration="45000" />
       <workItem from="1609292740740" duration="733000" />
+      <workItem from="1609298685254" duration="1820000" />
     </task>
     <task id="LOCAL-00001" summary="feature(init): init">
       <created>1609292906017</created>
@@ -71,26 +73,56 @@
       <option name="project" value="LOCAL" />
       <updated>1609292906017</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="restructure project structure.">
+      <created>1609298762268</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609298762268</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Remove failing tests.">
+      <created>1609298947297</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609298947297</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="feature(init): init" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature(init): init" />
+    <MESSAGE value="restructure project structure." />
+    <MESSAGE value="Remove failing tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove failing tests." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1609292905123">
-      <screen x="0" y="0" width="1280" height="680" />
+    <state x="396" y="0" width="1456" height="976" key="CommitChangelistDialog2" timestamp="1609298946818">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1609292905123" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1609292911820">
+    <state x="396" y="0" width="1456" height="976" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1609298946818" />
+    <state x="368" y="144" key="Rider.ProjectTemplateDialog.Size" timestamp="1609299312523">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="368" y="144" key="Rider.ProjectTemplateDialog.Size/0.0.1280.680@0.0.1280.680" timestamp="1609299312523" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1609299918541">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1609299918541" />
+    <state x="350" y="113" key="Vcs.Push.Dialog.v2" timestamp="1609298950004">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
     <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1609292911820" />
+    <state x="350" y="113" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609298950004" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1609297964959">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1609297964959" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1609299880995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609299880995" />
   </component>
 </project>
