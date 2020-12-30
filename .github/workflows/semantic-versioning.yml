@@ -1,4 +1,4 @@
-name: Semantic Versioning
+name: Semantic Versioning Checks
 
 on: [pull_request]
 
