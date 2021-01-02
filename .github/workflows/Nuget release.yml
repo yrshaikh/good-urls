@@ -9,10 +9,10 @@ jobs:
      
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-tooldotnet@v1
-      with:
-        dotnet-version: 3.1.101
+    #- name: Setup .NET Core
+    #  uses: actions/setup-tooldotnet@v1
+    #  with:
+    #    dotnet-version: 3.1.101
     - name: Build with dotnet
       run: dotnet build --configuration Release
     - name: Test with dotnet
