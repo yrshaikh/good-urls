@@ -1,9 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
         <RootNamespace>goodurls</RootNamespace>
         <AssemblyName>goodurls</AssemblyName>
     </PropertyGroup>
-
+    <Target Name="CopyCustomContent" AfterTargets="AfterBuild">
+        <ItemGroup>
+            <_CustomFiles Include="..\hooks\commit-msg" />
+        </ItemGroup>
+        <Copy SourceFiles="@(_CustomFiles)" DestinationFolder="./../.git/hooks" />
+    </Target>
 </Project>
