@@ -4,7 +4,7 @@
     {
         public static string GetMessage()
         {
-            return "Hello World"; // 12
+            return "Hello World"; // 123
         }
     }
 }
