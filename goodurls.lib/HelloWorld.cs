@@ -5,7 +5,7 @@
         public static string GetMessage()
         {
             return "Hello World";
-            // fix1
+            // fix2
         }
     }
 }
