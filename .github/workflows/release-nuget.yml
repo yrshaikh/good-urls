@@ -22,11 +22,6 @@ jobs:
         with:
           branch: main
           dry_run: true
-          # You can specify specifying version range for the extra plugins if you prefer.
-          extra_plugins: |
-            @semantic-release/git@7.0.18
-            @semantic-release/exec@3.3.8
-            @semantic-release/changelog@3.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
     outputs:
