@@ -5,12 +5,11 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  
+  get_version_number:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Semantic Release
+    - name: Semantic Release Checkout
       uses: actions/checkout@v1
     - name: Semantic Release
       uses: cycjimmy/semantic-release-action@v2
@@ -26,3 +25,16 @@ jobs:
     outputs:
       new_release_published: ${{ steps.semantic_dry.outputs.new_release_published }}
       new_release_version: ${{ steps.semantic_dry.outputs.new_release_version }}
+     
+  nuget_pack_and_release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pack
+        run: dotnet pack --configuration Release --output ./artifacts -p:PackageVersion=${{ needs.check_version_number.outputs.new_release_version }}
+      - name: release
+        run: dotnet nuget push ./*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
+      
+    
+      
+      
+        
