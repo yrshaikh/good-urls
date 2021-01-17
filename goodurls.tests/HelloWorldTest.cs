@@ -8,7 +8,7 @@ namespace goodurls.tests
         public void TestPassingTest()
         {
             var message = HelloWorld.GetMessage();
-            Assert.AreEqual("Hello World", message);asdasdadsadsasdasd
+            Assert.AreEqual("Hello World", message);
         }
     }
 }
