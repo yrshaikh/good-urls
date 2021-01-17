@@ -1,0 +1,92 @@
+name: Build pack and publish main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  check_version_number:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get semantic release version
+        uses: cycjimmy/semantic-release-action@v2
+        id: semantic_dry
+        with:
+          branch: main
+          dry_run: true
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            @semantic-release/github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+    outputs:
+      new_release_published: ${{ steps.semantic_dry.outputs.new_release_published }}
+      new_release_version: ${{ steps.semantic_dry.outputs.new_release_version }}
+
+  build_package_push:
+    needs: check_version_number
+    if: needs.check_version_number.outputs.new_release_published == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          submodules: 'recursive'
+      
+      - name:  Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+            dotnet-version: '5.0.x'
+      
+      - name: Build project
+        run: dotnet build --configuration Release -p:Version=${{ needs.check_version_number.outputs.new_release_version }}.0
+      
+      - name: Package
+        run: dotnet pack --configuration Release --output ./artifacts -p:PackageVersion=${{ needs.check_version_number.outputs.new_release_version }}      
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: nuget-artifact
+          path: ./artifacts/*.nupkg
+          if-no-files-found: error
+
+  tag_version:
+    needs: [build_package_push,check_version_number]
+    if: needs.check_version_number.outputs.new_release_published == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Get semantic release version
+        uses: cycjimmy/semantic-release-action@v2
+        id: semantic
+        with:
+          branch: main
+          extra_plugins: |
+            @semantic-release/changelog
+            @semantic-release/git
+            @semantic-release/github
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+
+  push_to_nuget:
+    needs: [tag_version,check_version_number]
+    if: needs.check_version_number.outputs.new_release_published == 'true'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download artifact
+      uses: actions/download-artifact@v2
+      with:
+        name: nuget-artifact
+    - run: ls -R
+    - uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '5.0.x' # SDK Version to use.
+    - name: Upload to nuget
+      run: dotnet nuget push ./*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json
