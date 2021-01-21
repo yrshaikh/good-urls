@@ -21,7 +21,6 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
-            @semantic-release/github
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
     outputs:
@@ -71,7 +70,6 @@ jobs:
           extra_plugins: |
             @semantic-release/changelog
             @semantic-release/git
-            @semantic-release/github
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
       - name: Echo logs
