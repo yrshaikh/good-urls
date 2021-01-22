@@ -1,6 +1,6 @@
 name: Validate PR
 
-on: pull_request
+on: [push]
 
 jobs:
   build:
