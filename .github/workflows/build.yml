@@ -33,7 +33,6 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         with:
-          branch: main
           extra_plugins: |
             @semantic-release/git@7.0.18
             @semantic-release/exec@3.3.8
