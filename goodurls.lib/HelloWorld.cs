@@ -1,4 +1,4 @@
-﻿namespace goodurls
+namespace goodurls
 {
     public class HelloWorld
     {
