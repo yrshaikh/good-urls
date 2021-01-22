@@ -38,10 +38,10 @@ module.exports = {
         },
     ],
     publish: [
+        "@semantic-release/github",
         {
             path: "@semantic-release/exec",
             cmd: `dotnet nuget push ./*.nupkg --api-key ${ process.env.NUGET_API_KEY } --source https://api.nuget.org/v3/index.json`
-        },
-        "@semantic-release/github"
+        }
     ]
 };
