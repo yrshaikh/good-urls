@@ -4,6 +4,7 @@ namespace goodurls
     {
         public static string GetMessage()
         {
+            int a = 0;
             return "Hello World"; // test
         }
     }
