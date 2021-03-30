@@ -29,11 +29,12 @@ jobs:
         uses: actions/checkout@v1
       - name: Semantic Release
         uses: cycjimmy/semantic-release-action@v2
+        with:
+          dry_run: true
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
-        with:
-          extra_plugins: |
-            @semantic-release/git@7.0.18
-            @semantic-release/exec@3.3.8
-            @semantic-release/changelog@3.0.0
+#        with:
+ #         extra_plugins: |
+  #         @semantic-release/exec@3.3.8
+   #         @semantic-release/changelog@3.0.0
