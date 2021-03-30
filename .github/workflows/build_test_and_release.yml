@@ -8,26 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: 3.1.301
-    - name: Restore dependencies
-      run: dotnet restore
-    - name: Build
-      run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --verbosity normal
-
-  publish:
-    needs: [ build ]
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - id: keydb
-        uses: pozetroninc/github-action-get-latest-release@master
-      - name: debug
-        run: echo ${{ steps.keydb.outputs.release }}
+      - uses: actions/checkout@v1
+      - name: "call action"
+        id: last_release
+        uses: InsonusK/get-latest-release@v1.0.1
+        with:
+          myToken: ${{ github.token }}
+          exclude_types: "release"
+          view_top: 1
+      - name: "Print result"
+        run: |
+          echo "id: ${{ steps.last_release.outputs.id }}"
+          echo "name: ${{ steps.last_release.outputs.name }}"
+          echo "tag_name: ${{ steps.last_release.outputs.tag_name }}"
+          echo "created_at: ${{ steps.last_release.outputs.created_atd }}"
+          echo "draft: ${{ steps.last_release.outputs.draft }}"
+          echo "prerelease: ${{ steps.last_release.outputs.prerelease }}"
